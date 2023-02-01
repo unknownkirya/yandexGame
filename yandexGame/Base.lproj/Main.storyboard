@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="yandexGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krL-hs-B2E" customClass="gameFieldView" customModule="yandexGame" customModuleProvider="target">
+                                <rect key="frame" x="20" y="230" width="374" height="581"/>
+                                <color key="backgroundColor" red="0.66370373964309692" green="0.92296510934829712" blue="0.6415712833404541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shapeSize">
+                                        <size key="value" width="80" height="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shipColor">
+                                        <color key="value" red="0.98042196039999996" green="0.095689405330000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4k-az-Zam" customClass="GameControlViewClass" customModule="yandexGame" customModuleProvider="target">
+                                <rect key="frame" x="20" y="59" width="374" height="135"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="gameTimeLeft">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="gameDuration">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счет: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNU-7S-ply">
+                                <rect key="frame" x="177" y="832" width="60.5" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.66370373964309692" green="0.92296510934829712" blue="0.6415712833404541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VNU-7S-ply" firstAttribute="top" secondItem="krL-hs-B2E" secondAttribute="bottom" constant="21" id="0ST-Mi-lhl"/>
+                            <constraint firstItem="VNU-7S-ply" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GX1-sh-zsK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="krL-hs-B2E" secondAttribute="trailing" constant="20" id="Lq7-7d-tMd"/>
+                            <constraint firstItem="krL-hs-B2E" firstAttribute="top" secondItem="d4k-az-Zam" secondAttribute="bottom" constant="36" id="OzV-fO-6mc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d4k-az-Zam" secondAttribute="trailing" constant="20" id="XfQ-IX-QeB"/>
+                            <constraint firstItem="d4k-az-Zam" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="aAs-jh-Tjt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VNU-7S-ply" secondAttribute="bottom" constant="8" id="e8w-fR-0XX"/>
+                            <constraint firstItem="krL-hs-B2E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fPb-v9-ZK8"/>
+                            <constraint firstItem="d4k-az-Zam" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="www-el-hMk"/>
+                            <constraint firstItem="krL-hs-B2E" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="230" id="zvi-pP-jbO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameControl" destination="d4k-az-Zam" id="aXG-OK-Jnk"/>
+                        <outlet property="gameFieldView" destination="krL-hs-B2E" id="XRY-j1-zyt"/>
+                        <outlet property="scoreLabel" destination="VNU-7S-ply" id="N2J-Br-1ND"/>
+                        <outlet property="viewForTriangle" destination="krL-hs-B2E" id="0Wo-fw-VBv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MCN-r5-TSc">
+                    <connections>
+                        <action selector="objectTapped:" destination="BYZ-38-t0r" id="D9g-aE-HTp"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
